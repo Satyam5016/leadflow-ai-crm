@@ -15,11 +15,11 @@ class CustomerFactory extends Factory
         return [
             'workspace_id' => Workspace::factory(),
             'owner_id' => User::factory(),
-            'name' => fake()->name(),
-            'company_name' => fake()->company(),
-            'email' => fake()->companyEmail(),
-            'phone' => fake()->phoneNumber(),
-            'address' => fake()->address(),
+            'name' => $this->faker->name(),
+            'company_name' => $this->faker->company(),
+            'email' => $this->faker->companyEmail(),
+            'phone' => $this->faker->phoneNumber(),
+            'address' => $this->faker->address(),
         ];
     }
 }

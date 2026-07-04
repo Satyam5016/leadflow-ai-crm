@@ -15,12 +15,12 @@ class DealFactory extends Factory
         return [
             'workspace_id' => Workspace::factory(),
             'owner_id' => User::factory(),
-            'title' => fake()->catchPhrase(),
-            'stage' => fake()->randomElement(['prospecting', 'negotiation', 'proposal', 'won', 'lost']),
-            'value' => fake()->numberBetween(5000, 150000),
-            'expected_close_date' => fake()->dateTimeBetween('now', '+90 days'),
-            'probability' => fake()->numberBetween(10, 95),
-            'description' => fake()->paragraph(),
+            'title' => $this->faker->catchPhrase(),
+            'stage' => $this->faker->randomElement(['prospecting', 'negotiation', 'proposal', 'won', 'lost']),
+            'value' => $this->faker->numberBetween(5000, 150000),
+            'expected_close_date' => $this->faker->dateTimeBetween('now', '+90 days'),
+            'probability' => $this->faker->numberBetween(10, 95),
+            'description' => $this->faker->paragraph(),
         ];
     }
 }

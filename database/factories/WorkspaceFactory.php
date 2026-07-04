@@ -12,7 +12,7 @@ class WorkspaceFactory extends Factory
 {
     public function definition(): array
     {
-        $name = fake()->company();
+        $name = $this->faker->company();
 
         return [
             'owner_id' => User::factory(),

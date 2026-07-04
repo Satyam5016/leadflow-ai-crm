@@ -16,11 +16,11 @@ class TaskFactory extends Factory
             'workspace_id' => Workspace::factory(),
             'assigned_to_id' => User::factory(),
             'created_by_id' => User::factory(),
-            'title' => fake()->sentence(4),
-            'description' => fake()->sentence(),
-            'due_date' => fake()->dateTimeBetween('now', '+21 days'),
-            'priority' => fake()->randomElement(['low', 'medium', 'high']),
-            'status' => fake()->randomElement(['pending', 'in progress', 'completed']),
+            'title' => $this->faker->sentence(4),
+            'description' => $this->faker->sentence(),
+            'due_date' => $this->faker->dateTimeBetween('now', '+21 days'),
+            'priority' => $this->faker->randomElement(['low', 'medium', 'high']),
+            'status' => $this->faker->randomElement(['pending', 'in progress', 'completed']),
         ];
     }
 }
