@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: leadflow-ai-crm
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.render
+    envVars:
+      - key: APP_NAME
+        value: LeadFlow AI CRM
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_URL
+        fromDatabase:
+          name: leadflow-ai-crm-db
+          property: connectionString
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: MAIL_MAILER
+        value: log
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: SEED_DATABASE
+        value: true
+
+databases:
+  - name: leadflow-ai-crm-db
+    plan: free
